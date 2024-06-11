@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-image: url("1pic.jpg");
+        }
+        h1{
+            font-family:bold;
+            text-transform:uppercase;
+        }
+        h2 {
+            margin-top: 0;
+        }
+
+        input, button {
+            width: 50%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: rgb(222,184,135);
+            color: white;
+            cursor: pointer;
+            width: 80px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <h2> Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+    </div>
+    <script>
+        function login() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+                // Alert if fields are empty
+                alert("Please fill in both email and password fields.");
+            } else {
+                // Replace login container with thank you message if fields are filled
+                document.getElementById("loginContainer").innerHTML = "<h1 >Thanks for logging in to Nawab's interior. Our team will connect with you shortly.</h1>";
+            }
+        }
+    </script>
+</body>
+</html>

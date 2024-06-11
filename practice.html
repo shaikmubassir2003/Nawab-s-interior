@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+        .navbar img {
+            height: 100px;
+            width: 160px;
+        }
+        .search-bar {
+            margin-left: auto;
+            margin-right: 40px;
+        }
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-bar button {
+            padding: 5px 8px;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+            background-color: rgb(161, 102, 47);
+            color: white;
+            cursor: pointer;
+        }
+        a {
+            margin-right: 20px;
+            color: rgb(161, 102, 47);
+            font-size: small;
+            text-decoration: none;
+        }
+        .carousel-container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: auto;
+        }
+        .carousel-slide {
+            display: none;
+        }
+        .carousel-slide img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .active {
+            display: block;
+        }
+        .carousel-navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .prev, .next {
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .carousel-dots {
+            text-align: center;
+            padding-top: 20px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot.active {
+            background-color: #717171;
+        }
+        .middle {
+            font-size: 25px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: #BC9B5D;
+            margin: 20px 0;
+        }
+        .content {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        .content h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .content h4 {
+            font-weight: lighter;
+        }
+        .view-more-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgb(161, 102, 47);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .view-more-button:hover {
+            background-color: #975f28;
+        }
+        .click {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .click img {
+            margin: 0 20px;
+        }
+        .navbar2 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .navbar2 a {
+            padding: 10px 20px;
+            background-color: #BC9B5D;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .dropdown .dropbtn {
+            background-color: transparent;
+            color: rgb(161, 102, 47);
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: rgb(161, 102, 47);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#"><img src="confirm_logo.png" alt="Logo"></a>
+        <a href="http://127.0.0.1:5500/login.html">LOGIN</a>
+        <a href="http://127.0.0.1:5500/DESGINS.HTML">DESIGNS</a>
+        <a href="#">OUR PROJECTS</a>
+        <a href="#">CONTACT US</a>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="search()">Search</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="http://127.0.0.1:5500/login.html">LOGIN</a>
+                <a href="http://127.0.0.1:5500/DESGINS.HTML">DESIGNS</a>
+                <a href="#">OUR PROJECTS</a>
+                <a href="#">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="carousel-container">
+        <div class="carousel-slide active">
+            <img src="kitchen6.jpg" alt="Interior Design 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="kitchen5.jpg" alt="Interior Design 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="kitchen4.jpg" alt="Interior Design 3">
+        </div>
+        <div class="carousel-navigation">
+            <div class="prev">&#10094;</div>
+            <div class="next">&#10095;</div>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="middle">
+        Luxury Interior Design & Build Studio Crafting Homes & Offices Since 2022
+    </div>
+    <div class="content">
+        <div>
+            <h3>Our Projects</h3>
+            <h4>NAWAB'S INTERIOR is your premier destination for luxury interior design solutions in Ongole. Our expert interior designers specialize in crafting bespoke interiors for both residential and office spaces. Whether you're seeking elegant home interiors or functional office designs, our team is dedicated to delivering excellence at every step. Collaborate with us to transform your space into a haven of style and functionality.</h4>
+        </div>
+        <a href="#" class="view-more-button">View More</a>
+    </div>
+    <br><br><br><br>
+    <div class="click">
+        <img src="clickimage2.webp" style="width:278px; height:auto;">
+        <img src="clickimage1.webp" style="width:276.89px; height:auto;">
+        <div class="navbar2">
+            <a href="http://127.0.0.1:5500/OUR%20PROJECT.HTML">Click Here To view Interior Design</a>
+            <a href="http://127.0.0.1:5500/OUR%20PROJECT.HTML">Click Here To view Interior Design</a>
+        </div>
+    </div>
+    <br><br><hr>
+    <script>
+        function search() {
+            var query = document.getElementById("searchInput").value.toLowerCase();
+            switch (query) {
+                case "login":
+                    window.location.href = "http://127.0.0.1:5500/login.html";
+                    break;
+                case "designs":
+                    window.location.href = "http://127.0.0.1:5500/DESGINS.HTML";
+                    break;
+                case "our projects":
+                    window.location.href = "#";
+                    break;
+                case "contact us":
+                    window.location.href = "#";
+                    break;
+                default:
+                    alert("Sorry, no results found for your search query.");
+                    break;
+            }
+        }
+
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlides(n) {
+            if (n >= slides.length) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+                dots[index].classList.remove('active');
+            });
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlides(++slideIndex);
+        }
+
+        function prevSlide() {
+            showSlides(--slideIndex);
+        }
+
+        document.querySelector('.prev').addEventListener('click', prevSlide);
+        document.querySelector('.next').addEventListener('click', nextSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlides(slideIndex = index);
+            });
+        });
+
+        showSlides(slideIndex);
+    </script>
+</body>
+</html>

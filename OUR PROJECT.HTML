@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Office Interiors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #a48734;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #a48734;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px;
+        }
+
+        .image-container img {
+            width: 200px;
+            height: auto;
+        }
+
+        .text-container {
+            max-width: 400px;
+        }
+
+        .text-container h3 {
+            font-size: 1.5em;
+            color: #a48734;
+        }
+
+        .text-container p {
+            font-size: 1em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .middle {
+            text-align: center;
+        }
+
+        .middle h3 {
+            color: #a48734;
+        }
+        .click{
+            background-color: #f2f2f2; 
+        }
+        .navbar2{
+            padding-left: 190px;
+            margin: auto;
+            border-radius: 20px;
+            border-color: black;
+        }
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            background-color: transparent;
+            color: rgb(161, 102, 47);
+            border: none;
+            cursor: pointer;
+        }
+        .container {
+    text-align: center;
+    padding: 50px;
+}
+
+.form-container {
+    background-color: #e2d0b8;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #a28351;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1 1 calc(50% - 10px);
+    margin: 10px 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #5d5d5d;
+}
+
+input, select {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    flex: 1 1 100%;
+    padding: 10px 20px;
+    margin: 20px 5px 0 5px;
+    background-color: #4b4b4b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+    </style>
+    
+    <header>
+        <h1>HOME & OFFICE</h1>
+        <h2>INTERIORS</h2>
+    </header>
+    <section class="content">
+        <div class="image-container">
+            <img src="home interior.jpeg" alt="Home Interior" height="500px">
+        </div>
+        <div class="text-container">
+            <h3>How are we different</h3>
+            <p>Crafting Spaces, Creating Memories</p>
+            <p>NAWAB'S INTERIOR transforms spaces with luxurious, innovative, and personalized interiors. Our expert team crafts beautiful, functional environments tailored to your unique vision. We blend contemporary trends with timeless elegance, creating sophisticated and stylish spaces.</p>
+        </div>
+        <div class="image-container">
+            <img src="office interior.jpg" alt="Office Interior">
+        </div>
+    </section>
+    <br>
+    <div class="middle">
+        <h1 style="color: #a48734;">Our Projects</h1>
+    </div>
+    <div class="click">
+        <div>
+            <img src="clickimage2.webp" style="width:278px; height:auto; margin-left: 170px;">
+            <img src="clickimage1.webp" style="width:276.89px; height:auto; margin-left: 100px; ">
+        </div>
+        <div class="navbar2">
+            <!-- Navbar content for the small navbar button -->
+            <a href="http://127.0.0.1:5500/OUR%20PROJECT.HTML" style="color: black;">Click Here To view Interior Design</a>
+            <a href="http://127.0.0.1:5500/OUR%20PROJECT.HTML" style=" padding-left: 140px; color: black;">Click Here To view Interior Design</a>
+        </div>
+    </div>
+    <br>
+    <script src="script.js"></script>
+    <div class="imp">
+        <img src="imp1.png" width="920px">
+    </div>
+    <div class="container">
+        <h1>Tell Us What You Need</h1>
+        <div class="form-container">
+            <h2>Get a Price Quote</h2>
+            <form id="price-quote-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="code">Code</label>
+                    <select id="code" name="code">
+                    
+                        <option value="IE">IE</option>
+                        <option value="IE">IE+91</option>
+                        <option value="IE">IE+01</option>
+                        <option value="IE">IE+11</option>
+                        <!-- Add other country codes as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="service1">Select a Service</label>
+                    <select id="service1" name="service1">
+                        <option value="">Choose an option</option>
+                        <option value="">choose option</option>
+                        <option value="interior desgin">interior desgin</option>
+                        <option value="interior Execution">interior Execution</option>
+                        <option value="both">both</option>
+                        <!-- Add services as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="service2">Select a Service</label>
+                    <select id="service2" name="service2">
+                        <option value="">Choose an option</option>
+                        <option value="">choose option</option>
+                        <option value="office">office</option>
+                        <option value="home">home</option>
+                        <option value="Flat">Flat</option>
+                        <option value="villa">villa</option>
+                        <!-- Add services as needed -->
+                    </select>
+                </div>
+                <button type="submit">Request a Quote</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
